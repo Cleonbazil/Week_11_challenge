@@ -54,6 +54,4 @@ with the inertia values for each number of clusters examnied.
 
 #### Elbow curve visualization
 
-![alt text](Resources/elbow.png?raw=true)
-
 
