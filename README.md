@@ -80,3 +80,73 @@ slope. With the number of clusters selected the KMeans algorithm is instantiated
 #### Cluster scatter plot
 
 ![Alt text](Resources/scatter.png)
+
+
+
+
+#### Principal Component Analysis (PCA)
+
+**In this section we perform PCA on the data and examine the results,as per the instructions the number of n_components was set to 3
+and the totla explained variance was approximately 90% which for our intents and purposes is sufficient.
+
+#### PCA data frame
+        
+        coin_id      |      PCA1 |      PCA2 |      PCA3 |
+       | bitcoin     | -0.600667 |  0.84276  |  0.461595 |
+       | ethereum    | -0.458261 |  0.458466 |  0.952877 |
+       | tether      | -0.43307  | -0.168126 | -0.641752 |
+       |ripple       | -0.471835 | -0.22266  | -0.479053 |
+       |bitcoin-cash | -1.1578   |  2.04121  |  1.85972  |
+
+**As in the previous section we then proceed to generate and plot the inertia valued to determine the best value of K**
+
+#### PCA inertia data fame
+       
+       K | Inertia |
+       1 |  256.87 |
+       2 |  168.81 | 
+       3 |   93.77 |  
+       4 |   49.67 | 
+       5 |   39.17 | 
+
+
+
+![Alt text](Resources/pca_elbow.png)
+
+
+
+
+**Again we see that the most pronounced change in slope in at k = 4 clusters. The KMeans model is instatiated, fitted and used to predict
+the respective clusters**
+
+#### PCA data frame with the predicted clusters
+
+       coin_id      |      PCA1 |      PCA2 |      PCA3 |   crypto_clusters 
+      | bitcoin     | -0.600667 |  0.84276  |  0.461595 |         3
+      | ethereum    | -0.458261 |  0.458466 |  0.952877 |         3
+      | tether      | -0.43307  | -0.168126 | -0.641752 |         0
+      |ripple       | -0.471835 | -0.22266  | -0.479053 |         0
+      |bitcoin-cash | -1.1578   |  2.04121  |  1.85972  |         3
+      
+      
+      
+#### PCA Cluster scatter plot
+      
+![Alt text](Resources/pca_scatter.png)
+
+
+**To obtain a better sense of how the data is clustered alog the pcas we have plotted the data in 3D
+
+
+#### PCA 3D Cluster scatter plot
+
+
+![Alt text](Resources/pca_scatter3D.png)
+
+
+**From this plot we can see that most of the data points form 2 clusters along PCA 2 and PCA 3 and three outliers along PCA 1**
+
+
+
+
+
