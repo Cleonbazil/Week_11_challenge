@@ -42,7 +42,7 @@ afterwards the data is scaled to prevent the results to be skewed by one feature
 
 
 **To continue our analysis process we define a function dubbed best_k which takes in the scaled dataframe and returns another 
-with the inertia values for each number of clusters examnied.**
+with the inertia values for each number of clusters examnied, which are plotted to determin the appropiate number of clusters**
 
 
 #### Inertia values data frame
@@ -59,3 +59,24 @@ with the inertia values for each number of clusters examnied.**
 #### Elbow curve visualization
 
 ![Alt text](Resources/elbow.png)
+
+
+
+**After looking at the graph the number of clusters selected is 4 because at this value the graphs demonstrates the sharpest change in 
+slope. With the number of clusters selected the KMeans algorithm is instantiated and fitted to late perform predictions.**
+
+
+#### Predicted cluster data frame
+
+       coin_id            ppc_24h      ppc_7d       ppc_14d      ppc_30d      ppc_60d       ppc_200d      ppc_1y  |   crypto_clusters |
+     | bitcoin      |    0.508529   |  0.493193  |  0.7722    |  0.23546   | -0.0674951  | -0.355953 |  -0.251637 |       0           |
+     | ethereum     |    0.185446   |   0.934445 |  0.558692  | -0.0543409 | -0.273483   | -0.115759 |  -0.199352 |       0           |
+     | tether       |    0.021774   |  -0.706337 | -0.0216804 | -0.0610302 |  0.00800452 | -0.550247 |  -0.282061 |       3           |
+     | ripple       |   -0.0407644  |  -0.810928 |  0.249458  | -0.050388  | -0.373164   | -0.458259 |  -0.295546 |       3           |
+     | bitcoin-cash |     1.19304   |   2.00096  |  1.76061   |  0.545842  | -0.291203   | -0.499848 |  -0.270317 |       0           |
+
+
+
+#### Cluster scatter plot
+
+![Alt text](Resources/scatter.png)
